@@ -3,7 +3,7 @@ FROM        ubuntu
 MAINTAINER  serverwentdown
 
 RUN         apt-get update \
-            && apt-get install openssl wget zip unzip tar xz-utils gzip openssh-client git jq \
+            && apt-get install -y openssl wget zip unzip tar xz-utils gzip openssh-client git jq \
             && wget -O /tmp/index.json https://nodejs.org/dist/index.json \
             && VER=$(cat /tmp/index.json | jq -r '.[0].version') \
             && rm /tmp/index.json \
